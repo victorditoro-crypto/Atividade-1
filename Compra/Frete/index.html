@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Frete Grátis</title>
+</head>
+<body>
+    <h1>Verificando se o Frete e Grátis</h1>
+
+    <label for="compra">Valor da compra:</label>
+    <input type="number" id="compra" />
+
+    <button onclick="verificarFrete()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        const f = 150;
+
+        function verificarFrete() {
+            const x = Number(document.getElementById("compra").value);
+
+            if (isNaN(x)) {
+                alert("Por favor, insira um valor válido!");
+                return;
+            }
+
+            const mensagem = x >= f ? "Frete Grátis" : "Frete Não Grátis";
+
+            document.getElementById("resultado").textContent = mensagem;
+        }
+    </script>
+</body>
+</html>

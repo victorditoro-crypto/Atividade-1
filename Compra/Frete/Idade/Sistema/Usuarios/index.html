@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Verificar de Usuários Online</title>
+</head>
+<body>
+    <h1>Verificar de Usuários Online</h1>
+
+    <label for="usuarios">Usuários online:</label>
+    <input type="number" id="usuarios" />
+
+    <button onclick="verificarUsuarios()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        const max = 100;
+
+        function verificarUsuarios() {
+            const u = Number(document.getElementById("usuarios").value);
+
+            if (isNaN(u)) {
+                alert("Por favor, digite um número válido.");
+                return;
+            }
+
+            if (u <= max) {
+                document.getElementById("resultado").textContent = "ok";
+            } else {
+                document.getElementById("resultado").textContent = "limite excedido";
+            }
+        }
+    </script>
+</body>
+</html>
