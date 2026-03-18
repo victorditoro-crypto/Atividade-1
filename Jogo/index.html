@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Pontuação</title>
+</head>
+<body>
+
+    <h1>Sistema de Pontuação</h1>
+
+    <label>Nome:</label>
+    <input type="text" id="nome"><br><br>
+
+    <label>Pontos:</label>
+    <input type="number" id="pontos"><br><br>
+
+    <button onclick="classificar()">Classificar</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function classificar() {
+            let nome = document.getElementById("nome").value;
+            let pontos = Number(document.getElementById("pontos").value);
+
+            let classificacao = "";
+
+            if (pontos >= 1000) {
+                classificacao = "Lendário";
+            } else if (pontos >= 500) {
+                classificacao = "Mestre";
+            } else if (pontos >= 200) {
+                classificacao = "Intermediário";
+            } else {
+                classificacao = "Iniciante";
+            }
+
+            document.getElementById("resultado").innerText =
+                "Jogador: " + nome + " | Classificação: " + classificacao;
+        }
+    </script>
+
+</body>
+</html>
